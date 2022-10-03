@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc39f21f8ef99ed4a8de8025dcfb3ec1, type: 3}
+  m_Name: AudioBase
+  m_EditorClassIdentifier: 
+  SucessPar: {fileID: 1064654773206178538, guid: c4cb65c5eb960f040bc018da2d201201, type: 3}
+  FailPar: {fileID: 1064654773206178538, guid: d33339be87ed2234aa75cd327e22c93b, type: 3}
+  SuccessCli: {fileID: 8300000, guid: bde91441c9a623049a16647944d65403, type: 3}
+  FailCli: {fileID: 8300000, guid: c2f83e069c7d7b344a65402202c12075, type: 3}
