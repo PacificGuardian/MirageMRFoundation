@@ -43360,7 +43360,7 @@ MonoBehaviour:
   effBase: {fileID: 11400000, guid: e53fb1f1ab6ac374abc7e6098e61124e, type: 2}
   GameTime: 120
   BGM: {fileID: 8300000, guid: e28e2a7c82abaff4ea2f00056d5f424f, type: 3}
-  spawnDelay: 3
+  spawnDelay: 1.5
   time: 0
 --- !u!114 &5400050780384270714
 MonoBehaviour:

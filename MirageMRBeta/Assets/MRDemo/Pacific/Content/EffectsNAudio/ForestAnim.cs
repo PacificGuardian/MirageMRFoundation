@@ -13,9 +13,7 @@ public class ForestAnim : MonoBehaviour {
     private void StartEffects(){
         MainCamera.GetComponentInChildren<Camera>().enabled = false;
         GameObject SceCamGO = new GameObject();
-
         Camera CutCam = SceCamGO.AddComponent<Camera>();
-
     }
 
     private void StageChange(){

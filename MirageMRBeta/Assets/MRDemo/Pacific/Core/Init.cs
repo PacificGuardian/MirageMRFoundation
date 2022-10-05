@@ -63,6 +63,7 @@ public class Init : MonoBehaviour
 
     //Spawnbooks returns an array to keep track of current books
     //It also initiates the stages because theres no reason not to
+    /*
     private GameObject[] SpawnBooks(QuestionsBase Base){
         int XMod = 0;
         List<GameObject> LocalHolder = new List<GameObject>();
@@ -109,6 +110,55 @@ public class Init : MonoBehaviour
         //Local list of books for resetting and resummoning
         return LocalHolder.ToArray();
     }
+*/
+    private IEnumerator SpawnBook(QuestionsBase Base, GameObject[] ReturnBooks){
+        int XMod = 0;
+        List<GameObject> LocalHolder = new List<GameObject>();
+        int QuestionNumber = GameEventContainer.QuestionNumber;
+        int internalNum = QuestionNumber;
+        int BookAmount = Base.QNA[internalNum].TotalCount;
+        //Pushing variables to container
+        container.Question = Base.QNA[internalNum].Question;
+        container.CorrectAnswer = Base.QNA[internalNum].Answer;
+        string[] tempans = container.Answers(BookAmount, Base.QNA[internalNum].Type);
+        //float ShootMe = 0f;
+        QText.text = Base.QNA[internalNum].Question;
+        CurAltar = Altar[internalNum];
+
+        CurAltar.AddComponent<AltarTrig>();
+
+        for(int i = 0; i < BookAmount; i++)
+        {
+            //Randomise base power and angle
+            XMod = Random.Range(-10, 10);
+            Firept.rotation = Quaternion.Euler(FireAngleMod + XMod, angle(), 0);
+
+            GameObject Book = Instantiate(BookPrefab, Firept.position, Firept.rotation);
+            Book.transform.SetParent(Parent.transform);
+            Rigidbody tempforce = Book.GetComponent<Rigidbody>();
+
+
+            if(tempforce == null)
+            tempforce = Book.AddComponent<Rigidbody>();
+
+            float pow = power();
+            tempforce.AddForce(Book.transform.forward * pow, ForceMode.Impulse);
+            Debug.Log(pow);
+            Book.GetComponentInChildren<TextMeshProUGUI>().text = tempans[i];
+            LocalHolder.Add(Book);
+            //Answers
+            AnswersContainer anscon = Book.AddComponent<AnswersContainer>();
+            anscon.Answer = tempans[i];
+            if(anscon.Answer == container.CorrectAnswer)
+            anscon.Correct = true;
+            //ShootMe = 0;
+            yield return new WaitForSeconds(spawnDelay);
+        }
+                
+        //Local list of books for resetting and resummoning
+        BookList = LocalHolder.ToArray();
+        yield return null;
+    }
     int power(){
         return Random.Range(90,170);
     }
@@ -123,21 +173,17 @@ public class Init : MonoBehaviour
         }
         if(BookList != null){
         Animations.BookSwap();
+        //BookList = GameObject.FindGameObjectsWithTag("unactive");
         for(int i = 0; i < BookList.Length; i++){
                 Destroy(BookList[i]);
         }
      }
-        StartCoroutine(PrivBook());
+        StartCoroutine(SpawnBook(QuestionsCFG, BookList));
     }
-    IEnumerator PrivBook(){
-        yield return new WaitForSeconds(spawnDelay);
-        BookList = SpawnBooks(QuestionsCFG);
-        yield return null;
-    }
-
     public void BookStop(){
         Destroy(CurAltar.GetComponent<AltarTrig>());
         Destroy(CurAltar.GetComponent<Outline>());
+        //BookList = GameObject.FindGameObjectsWithTag("unactive");
         if(BookList != null)
         for(int i = 0; i < BookList.Length; i++){
                 Destroy(BookList[i]);
