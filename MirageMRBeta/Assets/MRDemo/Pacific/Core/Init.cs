@@ -51,7 +51,7 @@ public class Init : MonoBehaviour
     public AudioClip BGM;
     [SerializeField]
     private float spawnDelay;
-    public float time = 0;
+    //public float time = 0;
     private void Awake(){
         Singleton = this;
     }

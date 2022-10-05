@@ -2,13 +2,13 @@
   "source": "Unity",
   "applications": [
     {
-      "app_key": "application.generated.unity.mixedreality_t1.exe",
+      "app_key": "application.generated.unity.mrbeta.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\STEM-PC\\Desktop\\P\\Monkey\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "F:\\FYP2223\\Unity\\MirageMRFoundation\\MirageMRBeta\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
-          "name": "MixedReality_T1 [Testing]"
+          "name": "MRBeta [Testing]"
         }
       }
     }

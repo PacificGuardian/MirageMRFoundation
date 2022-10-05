@@ -1,6 +1,7 @@
 MirageMRBeta/Library
 MirageMRBeta/Logs
-MirageMRBeta/TestBuild
+MirageMRBeta/TestBuild 
+MirageMRBeta/obj/Debug
 SteamVR_Actions.csproj
 SteamVR_Editor.csproj
 SteamVR_Input_Editor.csproj
@@ -12,6 +13,7 @@ Assets/Foundation/Steam/SteamVR_Resources/Resources/SteamVR_Settings.asset.meta
 Temp/UnityLockfile
 
 *.csproj
+*.cache
 Assembly-CSharp.csproj
 Assembly-CSharp.csproj
 Logs/shadercompiler-UnityShaderCompiler.exe0.log
