@@ -42,6 +42,8 @@ public class Init : MonoBehaviour
     public GameObject Rabbit;
     [SerializeField] 
     private GameObject[] Altar;
+    public int TotalCount;
+    [HideInInspector]
     public GameObject CurAltar;
     public EffectBase effBase;
     public float GameTime;
@@ -116,7 +118,7 @@ public class Init : MonoBehaviour
         List<GameObject> LocalHolder = new List<GameObject>();
         int QuestionNumber = GameEventContainer.QuestionNumber;
         int internalNum = QuestionNumber;
-        int BookAmount = Base.QNA[internalNum].TotalCount;
+        int BookAmount = TotalCount;
         //Pushing variables to container
         container.Question = Base.QNA[internalNum].Question;
         container.CorrectAnswer = Base.QNA[internalNum].Answer;
@@ -154,13 +156,15 @@ public class Init : MonoBehaviour
             //ShootMe = 0;
             yield return new WaitForSeconds(spawnDelay);
         }
+        
+
                 
         //Local list of books for resetting and resummoning
         BookList = LocalHolder.ToArray();
         yield return null;
     }
     int power(){
-        return Random.Range(90,170);
+        return Random.Range(900,1700);
     }
 
     int angle(){   
