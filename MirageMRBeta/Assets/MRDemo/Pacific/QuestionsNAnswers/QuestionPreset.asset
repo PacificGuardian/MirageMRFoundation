@@ -16,4 +16,12 @@ MonoBehaviour:
   - Question: ____ are we going on a vacation? We need to go before my school starts.
     Answer: When
     Type: String
-    TotalCount: 1
+    TotalCount: 5
+  - Question: ____ are we going to do this summer?
+    Answer: What
+    Type: String
+    TotalCount: 5
+  - Question: "40\uFF0B43\uFF0B15 = "
+    Answer: 98
+    Type: Number
+    TotalCount: 5
