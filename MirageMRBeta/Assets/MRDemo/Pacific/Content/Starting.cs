@@ -26,17 +26,15 @@ public class Starting : MonoBehaviour
        }
        SliderBar.SetActive(false);
        SerCon.SetActive(false);
-      
-    }
-    private void StartingScene(){
-        //TargetPos = MainCamera;
         MainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-        TargetPos = MainCamera.transform.position;
-        //MainCamera.transform.LookAt(Init.Singleton.Rabbit.transform);
         if(MainCamera != null)
         MainCamera.SetActive(false);
+    }
+    private void StartingScene(){
+        Vector3 target = Init.Singleton.CamParent.transform.position - TargetPos;
+        print(target);
         HereCam = tempCam();
-        StartCoroutine(PointWarp(HereCam, TargetPos));
+        StartCoroutine(PointWarp(HereCam, target));
         if(ActivateCamera)
         GameObject.Find("Sphere_Inv").GetComponent<WebCam>().StartCamera();
 //        Init.Singleton.Rabbit.GetComponent<Animator>().Play("Scene");
@@ -64,9 +62,9 @@ public class Starting : MonoBehaviour
 
     IEnumerator PointWarp(GameObject Original, Vector3 Target){
         float Magnitude = 0.05f;
+        //Original.transform.LookAt(Target);
         while(Vector3.Distance(Original.transform.position, Target) >= 0.001f){
             Original.transform.position = Vector3.MoveTowards(Original.transform.position, Target, Magnitude);
-            Original.transform.LookAt(Target);
             Magnitude *= 1.01f;
             yield return new WaitForSeconds(0.01f);
         }
@@ -77,12 +75,23 @@ public class Starting : MonoBehaviour
                 Animations.Wave();
             }
             else{
-            StartCoroutine(FadeOut(initialFade, 0.02f));
             Animations.Wave();
+            yield return new WaitForSeconds(2.4f);
+            StartCoroutine(FadeOut(initialFade, 0.02f));
         }}
+        yield return null;
     }
 
     IEnumerator FadeOut(GameObject Fading, float FadeSpeed){
+        float mag = 0.1f;
+        Vector3 center = new Vector3(0,0,0);
+        while(Vector3.Distance(HereCam.transform.position, center) > 0.001){
+            HereCam.transform.position = Vector3.MoveTowards(HereCam.transform.position, center, mag);
+            yield return new WaitForSeconds(0.01f);
+        }
+        while(Quaternion.Angle(HereCam.transform.rotation,MainCamera.transform.rotation) > 0.1){
+            
+        }
         Color colour = Fading.GetComponent<Renderer>().material.color;
         while(colour.a >= 0){
         float fAmount = colour.a - 0.01f;

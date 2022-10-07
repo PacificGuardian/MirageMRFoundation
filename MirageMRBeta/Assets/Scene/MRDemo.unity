@@ -42744,7 +42744,7 @@ MonoBehaviour:
   - {fileID: 439923435}
   - {fileID: 439923435}
   - {fileID: 8647358773162666327}
-  TargetPos: {x: 0, y: 0, z: 0}
+  TargetPos: {x: 20, y: 0, z: 0}
   initialFade: {fileID: 1691979778}
   SliderBar: {fileID: 8647358773162666327}
   ActivateCamera: 1
@@ -44512,7 +44512,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5977220254402252387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -11.58}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -46554,34 +46554,6 @@ MonoBehaviour:
   speedX: 0
   speedY: 1
   speedZ: 0
---- !u!114 &7480081007693724204
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7480081007693724205}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f608b1abae6ee543824ae214d28fd63, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CamTruePos: {fileID: 0}
-  CamRot: {fileID: 0}
-  OppTruePos: {fileID: 0}
-  TargetBody: {fileID: 7480081008376044369}
-  TargetBodyOri: {fileID: 7480081008700559859}
-  stopPosFeed: 0
-  stopOriFeed: 0
-  usePosAvg: 0
-  useOriAvg: 0
-  Multiplier: 31
-  RotationX: 0
-  RotationY: 0
-  RotationZ: 0
-  avg_len_pos: 10
-  avg_len_ori: 10
-  ori_change_th: 0.5
 --- !u!1 &7480081007693724205
 GameObject:
   m_ObjectHideFlags: 0
@@ -46593,17 +46565,8 @@ GameObject:
   - component: {fileID: 7480081007693724217}
   - component: {fileID: 7480081007693724218}
   - component: {fileID: 7480081007693724219}
-  - component: {fileID: 7480081007693724212}
-  - component: {fileID: 7480081007693724213}
-  - component: {fileID: 7480081007693724214}
-  - component: {fileID: 7480081007693724215}
-  - component: {fileID: 7480081007693724208}
-  - component: {fileID: 7480081007693724209}
-  - component: {fileID: 7480081007693724210}
-  - component: {fileID: 7480081007693724211}
-  - component: {fileID: 7480081007693724204}
-  - component: {fileID: 7480081007693724220}
   - component: {fileID: 7480081007693724221}
+  - component: {fileID: 7480081007693724222}
   m_Layer: 0
   m_Name: TargetCube_invC
   m_TagString: Untagged
@@ -46611,164 +46574,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7480081007693724208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7480081007693724205}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd9ba35d6532f304c80718b70ebc5096, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Divisor: 25
---- !u!114 &7480081007693724209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7480081007693724205}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e31512ef982597847aef8ac033868a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CamTruePos: {fileID: 0}
-  CamRot: {fileID: 0}
-  OppTruePos: {fileID: 0}
-  Body: {fileID: 0}
-  Multiplier: 25
-  RotationX: 0
-  RotationY: 0
-  RotationZ: 0
-  avg_len: 22
---- !u!114 &7480081007693724210
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7480081007693724205}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ad7da4a29eb613408c26c29f7833874, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CamTruePos: {fileID: 0}
-  CamRot: {fileID: 0}
-  OppTruePos: {fileID: 0}
-  TargetBody: {fileID: 7480081008376044369}
-  stopFeed: 0
-  Multiplier: 30
-  RotationX: 0
-  RotationY: 0
-  RotationZ: 0
-  avg_len: 20
---- !u!114 &7480081007693724211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7480081007693724205}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 556a45287df191a4a8599a63ec7a8893, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CamTruePos: {fileID: 809209078135115090}
-  CamRot: {fileID: 1195484166}
-  OppTruePos: {fileID: 994224990}
-  TargetBody: {fileID: 7480081008376044369}
-  TargetBodyOri: {fileID: 7480081008700559859}
-  stopPosFeed: 0
-  stopOriFeed: 0
-  usePosAvg: 1
-  useOriAvg: 0
-  Multiplier: 47.8
-  RotationX: 2
-  RotationY: -2
-  RotationZ: 93.5
-  avg_len_pos: 28
-  avg_len_ori: 28
-  ori_change_th: 2
---- !u!114 &7480081007693724212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7480081007693724205}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 283bef0488c491248a1fee2701afa330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CamTruePos: {fileID: 0}
-  OppTruePos: {fileID: 0}
-  Multiplier: 30
-  Rotation: 30
-  avg_len: 22
---- !u!114 &7480081007693724213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7480081007693724205}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d6bd55c00a6f5247adb851e40da5078, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CamTruePos: {fileID: 0}
-  OppTruePos: {fileID: 0}
-  Multiplier: 30
-  RotationX: 0
-  RotationY: 0
-  RotationZ: 0
-  avg_len: 20
---- !u!114 &7480081007693724214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7480081007693724205}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cc5ba487e1b27849a6db1cd8e30522d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CamTruePos: {fileID: 0}
-  CamRot: {fileID: 0}
-  OppTruePos: {fileID: 0}
-  TargetBody: {fileID: 7480081008376044369}
-  stopFeed: 0
-  Multiplier: 25
-  RotationX: 0
-  RotationY: 0
-  RotationZ: 0
-  avg_len: 22
---- !u!114 &7480081007693724215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7480081007693724205}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c5ce87432a823d4c8943fab7ef109b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CamTruePos: {fileID: 0}
-  OppTruePos: {fileID: 0}
-  RotationY: 65
-  avg_len: 50
 --- !u!4 &7480081007693724217
 Transform:
   m_ObjectHideFlags: 0
@@ -46836,7 +46641,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7480081007693724220
+--- !u!114 &7480081007693724221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46845,7 +46650,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7480081007693724205}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00dea14a11a1fd743bc0ae5486c78500, type: 3}
+  m_Script: {fileID: 11500000, guid: 7be7cbd63d017704e8f32054e78a56fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CamTruePos: {fileID: 809209078135115090}
@@ -46856,17 +46661,24 @@ MonoBehaviour:
   stopBodyHTrack: 0
   stopPosFeed: 0
   stopOriFeed: 0
-  usePosAvg: 1
-  useOriAvg: 1
+  usePosDly: 1
+  useOriDly: 1
   VORORatio: 3.05
   CamTrackerDist: 16
   LockBodyHeight: 1
+  Multiplier: 31.5
   RotationX: 0
   RotationY: 0
-  RotationZ: 88.7
-  avg_len_pos: 50
-  avg_len_ori: 20
---- !u!114 &7480081007693724221
+  RotationZ: 90
+  Cam: {x: 0, y: 0, z: 0}
+  Opp: {x: 0, y: 0, z: 0}
+  Proj: {x: 0, y: 0, z: 0}
+  posLst: []
+  oriLst: []
+  delayFrame: 30
+  camdelay: 0.271725
+  fixedDeltaTime: 0
+--- !u!114 &7480081007693724222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46875,7 +46687,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7480081007693724205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7be7cbd63d017704e8f32054e78a56fa, type: 3}
+  m_Script: {fileID: 11500000, guid: b07e97f3db9e5ce48a164648d1967416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CamTruePos: {fileID: 809209078135115090}

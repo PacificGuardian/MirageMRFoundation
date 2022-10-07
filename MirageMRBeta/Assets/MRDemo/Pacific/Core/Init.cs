@@ -58,9 +58,7 @@ public class Init : MonoBehaviour
     private void Start(){
         GameEventContainer.QuestionsCFG = QuestionsCFG;
         container = GetComponent<QuestionContainer>();
-        //Skip startup for debugging purposes
-        GameEventContainer.AdvanceStage();
-        
+        //Skip startup for debugging purposes        
     }
 
     //Spawnbooks returns an array to keep track of current books
