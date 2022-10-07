@@ -143,7 +143,7 @@ public class Init : MonoBehaviour
 
             float pow = power();
             tempforce.AddForce(Book.transform.forward * pow, ForceMode.Impulse);
-            Debug.Log(pow);
+            //Debug.Log(pow);
             Book.GetComponentInChildren<TextMeshProUGUI>().text = tempans[i];
             LocalHolder.Add(Book);
             //Answers
@@ -162,11 +162,11 @@ public class Init : MonoBehaviour
         yield return null;
     }
     int power(){
-        return Random.Range(900,1700);
+        return Random.Range(1200,1500);
     }
 
     int angle(){   
-        return Random.Range(40,140);
+        return Random.Range(-40,-140);
     }
     public void BookSwap(){
         if(CurAltar != null){

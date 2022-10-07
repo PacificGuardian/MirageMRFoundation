@@ -17,22 +17,21 @@ public class Starting : MonoBehaviour
     public static GameObject SerCon;
     private void Awake(){
        GameEventContainer.start += StartingScene;
-       
-        SerCon = GameObject.Find("SerialController");
+       MainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+       if(MainCamera != null)
+       MainCamera.SetActive(false);
+       SerCon = GameObject.Find("SerialController");
        if(DisabledOnCutscenes.Length == 0)
-       DisabledOnCutscenes = GameObject.FindGameObjectsWithTag("Particle");
+             DisabledOnCutscenes = GameObject.FindGameObjectsWithTag("Particle");
        for(int i = 0; i < DisabledOnCutscenes.Length; i++){
-        DisabledOnCutscenes[i].SetActive(false);
+            DisabledOnCutscenes[i].SetActive(false);
        }
        SliderBar.SetActive(false);
        SerCon.SetActive(false);
-        MainCamera = GameObject.FindGameObjectWithTag("MainCamera");
-        if(MainCamera != null)
-        MainCamera.SetActive(false);
     }
     private void StartingScene(){
         Vector3 target = Init.Singleton.CamParent.transform.position - TargetPos;
-        print(target);
+        //print(target);
         HereCam = tempCam();
         StartCoroutine(PointWarp(HereCam, target));
         if(ActivateCamera)
@@ -89,9 +88,7 @@ public class Starting : MonoBehaviour
             HereCam.transform.position = Vector3.MoveTowards(HereCam.transform.position, center, mag);
             yield return new WaitForSeconds(0.01f);
         }
-        while(Quaternion.Angle(HereCam.transform.rotation,MainCamera.transform.rotation) > 0.1){
-            
-        }
+        //while(Quaternion.Angle(HereCam.transform.rotation,MainCamera.transform.rotation) > 0.1){
         Color colour = Fading.GetComponent<Renderer>().material.color;
         while(colour.a >= 0){
         float fAmount = colour.a - 0.01f;
