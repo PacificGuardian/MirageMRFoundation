@@ -12,6 +12,7 @@ public class Starting : MonoBehaviour
     private GameObject HereCam;
     public GameObject initialFade;
     public GameObject SliderBar;
+    public GameObject EntryPoint;
     [SerializeField]
     bool ActivateCamera;
     public static GameObject SerCon;
@@ -30,7 +31,7 @@ public class Starting : MonoBehaviour
        SerCon.SetActive(false);
     }
     private void StartingScene(){
-        Vector3 target = Init.Singleton.CamParent.transform.position - TargetPos;
+        Vector3 target = EntryPoint.transform.position;
         //print(target);
         HereCam = tempCam();
         StartCoroutine(PointWarp(HereCam, target));

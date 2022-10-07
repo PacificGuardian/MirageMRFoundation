@@ -17402,6 +17402,46 @@ Transform:
   m_Father: {fileID: 2060942608}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &913501825
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 913501826}
+  - component: {fileID: 913501827}
+  m_Layer: 0
+  m_Name: Entry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &913501826
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913501825}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -20, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7480081007329559856}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &913501827
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913501825}
+  m_Mesh: {fileID: 0}
 --- !u!1 &962889160
 GameObject:
   m_ObjectHideFlags: 0
@@ -17599,7 +17639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 0
-  DesiredSerialNumber: LHR-B42C085F
+  DesiredSerialNumber: LHR-0C94B153
   origin: {fileID: 0}
 --- !u!1 &1007212842
 GameObject:
@@ -30023,7 +30063,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4819147738699511154, guid: e0cfdb51cd4db7f46a730594c9f21f17, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4819147738699511154, guid: e0cfdb51cd4db7f46a730594c9f21f17, type: 3}
       propertyPath: m_LocalScale.x
@@ -40720,7 +40760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   index: 3
-  DesiredSerialNumber: LHR-CE32E66A
+  DesiredSerialNumber: LHR-4BEEA8BF
   origin: {fileID: 0}
 --- !u!1 &836456054829456854
 GameObject:
@@ -42746,9 +42786,10 @@ MonoBehaviour:
   - {fileID: 439923435}
   - {fileID: 439923435}
   - {fileID: 8647358773162666327}
-  TargetPos: {x: 20, y: 0, z: 0}
+  TargetPos: {x: -20, y: 0, z: 0}
   initialFade: {fileID: 1691979778}
   SliderBar: {fileID: 8647358773162666327}
+  EntryPoint: {fileID: 913501825}
   ActivateCamera: 1
 --- !u!114 &5400050780384270717
 MonoBehaviour:
@@ -46385,6 +46426,7 @@ Transform:
   - {fileID: 6650144573841409095}
   - {fileID: 8835718922069865417}
   - {fileID: 1528385287}
+  - {fileID: 913501826}
   m_Father: {fileID: 7480081008376044374}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
@@ -46907,7 +46949,7 @@ GameObject:
   - component: {fileID: 7480081008376044368}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
