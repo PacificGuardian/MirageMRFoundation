@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projection9 : MonoBehaviour
+public class Projection9Custom : MonoBehaviour
 {
     public GameObject CamTruePos;
     public GameObject CamRot;
     public GameObject OppTruePos;
     public GameObject TargetBody;
     public GameObject TargetBodyOri;
-
+    private int FirstTick = 0;
+    private bool FirstTicked = false;
     public bool stopBodyHTrack = false;
     public bool stopPosFeed = false;
     public bool stopOriFeed = false;
@@ -93,6 +94,14 @@ public class Projection9 : MonoBehaviour
                 TargetBody.transform.rotation = oriLst[0];
             else
                 TargetBody.transform.rotation = TargetBodyOri.transform.rotation;
+        }
+        if(FirstTick < 100){
+            FirstTick++;
+        }
+        else if(!FirstTicked){
+            GameEventContainer.AdvanceStage();
+            FirstTicked = true;
+            Debug.Log(Init.Singleton.CamParent.transform.position);
         }
     }
 }
