@@ -8,11 +8,13 @@ public class AltarTrig : MonoBehaviour{
     public AudioClip LoseClip;
     public GameObject ParticleWin;
     private ParticleSystem parte;
+    public float ColliderScale = 1;
 
     private void Start() {
         gameObject.AddComponent<Outline>().OutlineWidth = 10;
         BoxCollider BoxC = gameObject.AddComponent<BoxCollider>();
         BoxC.isTrigger = true;
+        BoxC.size = new Vector3(ColliderScale, ColliderScale, ColliderScale);
     }
     private void OnTriggerEnter(Collider other){
         if(other.transform.childCount > 0){

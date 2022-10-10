@@ -32,6 +32,7 @@ public class Init : MonoBehaviour
     [SerializeField] GameObject BookPrefab;
     [SerializeField] Transform Firept;
     [SerializeField] TextMeshProUGUI QText;
+    [SerializeField] private float ColScale;
     public GameObject CamParent;
     public int FireAngleMod = -30;
     public int AngCen = 0;
@@ -62,55 +63,13 @@ public class Init : MonoBehaviour
         //Skip startup for debugging purposes        
     }
 
-    //Spawnbooks returns an array to keep track of current books
-    //It also initiates the stages because theres no reason not to
-    /*
-    private GameObject[] SpawnBooks(QuestionsBase Base){
-        int XMod = 0;
-        List<GameObject> LocalHolder = new List<GameObject>();
-        int QuestionNumber = GameEventContainer.QuestionNumber;
-        int internalNum = QuestionNumber -= 1;
-        int BookAmount = Base.QNA[internalNum].TotalCount;
-        //Pushing variables to container
-        container.Question = Base.QNA[internalNum].Question;
-        container.CorrectAnswer = Base.QNA[internalNum].Answer;
-        string[] tempans = container.Answers(BookAmount, Base.QNA[internalNum].Type);
-        //float ShootMe = 0f;
-        
-        for(int i = 0; i < BookAmount; i++)
-        {
-            //Randomise base power and angle
-            XMod = Random.Range(-10, 10);
-            Firept.rotation = Quaternion.Euler(FireAngleMod + XMod, angle(), 0);
-
-            GameObject Book = Instantiate(BookPrefab, Firept.position, Firept.rotation);
-            Book.transform.SetParent(Parent.transform);
-            Rigidbody tempforce = Book.GetComponent<Rigidbody>();
-
-
-            if(tempforce == null)
-            tempforce = Book.AddComponent<Rigidbody>();
-
-
-            tempforce.AddForce(transform.forward * power(), ForceMode.Impulse);
-            Book.GetComponentInChildren<TextMeshProUGUI>().text = tempans[i];
-            LocalHolder.Add(Book);
-            //Answers
-            AnswersContainer anscon = Book.AddComponent<AnswersContainer>();
-            anscon.Answer = tempans[i];
-            if(anscon.Answer == container.CorrectAnswer)
-            anscon.Correct = true;
-            //ShootMe = 0;
-            
-        }
-        
-        QText.text = Base.QNA[internalNum].Question;
-        CurAltar = Altar[internalNum];
-
-        CurAltar.AddComponent<AltarTrig>();
-        //Local list of books for resetting and resummoning
-        return LocalHolder.ToArray();
-    }
+/*
+. 　　　。　　　　•　 　ﾟ　　。 　　.
+　　　.　　　 　　.　　　　　。　　 。　.
+.　　 。　　　　　 ඞ 。 . 　　 • 　　　　•
+　　ﾟ　　 Red was not An Impostor.　 。　.
+　　'　　　 1 Impostor remains 　 　　。
+　　ﾟ　　　.　　　. ,　　　　.　 .
 */
     private IEnumerator SpawnBook(QuestionsBase Base, GameObject[] ReturnBooks){
         int XMod = 0;
@@ -126,14 +85,15 @@ public class Init : MonoBehaviour
         QText.text = Base.QNA[internalNum].Question;
         CurAltar = Altar[internalNum];
 
-        CurAltar.AddComponent<AltarTrig>();
+        CurAltar.AddComponent<AltarTrig>().ColliderScale = ColScale;
         float[] tempAg = angle(BookAmount, AngCen, 45);
 
         for(int i = 0; i < BookAmount; i++)
         {
             //Randomise base power and angle
             XMod = Random.Range(-10, 10);
-            Firept.rotation = Quaternion.Euler(FireAngleMod + XMod, tempAg[i], 0);
+            Firept.rotation = Quaternion.Euler(FireAngleMod + XMod,0 , 0);
+            Firept.localEulerAngles = new Vector3(Firept.localEulerAngles.x, tempAg[i], Firept.localEulerAngles.z);
 
             GameObject Book = Instantiate(BookPrefab, Firept.position, Firept.rotation);
             Book.transform.SetParent(Parent.transform);

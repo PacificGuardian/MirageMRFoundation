@@ -30354,19 +30354,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 682912013994482582, guid: 18cf3512132d3384084569213fd67f52, type: 3}
       propertyPath: m_Size.x
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 682912013994482582, guid: 18cf3512132d3384084569213fd67f52, type: 3}
       propertyPath: m_Size.y
-      value: 5
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 682912013994482582, guid: 18cf3512132d3384084569213fd67f52, type: 3}
+      propertyPath: m_Size.z
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 682912013994482586, guid: 18cf3512132d3384084569213fd67f52, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 682912013994482586, guid: 18cf3512132d3384084569213fd67f52, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 682912013994482586, guid: 18cf3512132d3384084569213fd67f52, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30374,7 +30378,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 682912013994482586, guid: 18cf3512132d3384084569213fd67f52, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 682912013994482586, guid: 18cf3512132d3384084569213fd67f52, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42748,9 +42752,10 @@ MonoBehaviour:
   BookPrefab: {fileID: 8833372198720633752, guid: e0cfdb51cd4db7f46a730594c9f21f17, type: 3}
   Firept: {fileID: 973813458}
   QText: {fileID: 1676225227}
+  ColScale: 1.2
   CamParent: {fileID: 8202487754200426867}
   FireAngleMod: -30
-  AngCen: -90
+  AngCen: 180
   Delay: 0.2
   Rabbit: {fileID: 919132147764655312}
   Altar:
