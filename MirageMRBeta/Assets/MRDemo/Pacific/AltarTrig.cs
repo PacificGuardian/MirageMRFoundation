@@ -10,7 +10,7 @@ public class AltarTrig : MonoBehaviour{
     private ParticleSystem parte;
 
     private void Start() {
-        gameObject.AddComponent<Outline>();
+        gameObject.AddComponent<Outline>().OutlineWidth = 10;
         BoxCollider BoxC = gameObject.AddComponent<BoxCollider>();
         BoxC.isTrigger = true;
     }

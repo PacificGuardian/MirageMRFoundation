@@ -14,5 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SucessPar: {fileID: 1064654773206178538, guid: c4cb65c5eb960f040bc018da2d201201, type: 3}
   FailPar: {fileID: 1064654773206178538, guid: d33339be87ed2234aa75cd327e22c93b, type: 3}
-  SuccessCli: {fileID: 8300000, guid: bde91441c9a623049a16647944d65403, type: 3}
-  FailCli: {fileID: 8300000, guid: c2f83e069c7d7b344a65402202c12075, type: 3}
+  Pickup: {fileID: 1064654773206178538, guid: 537d4c80d51ff8a478591b2dc3a8b15a, type: 3}
+  SuccessCli: {fileID: 8300000, guid: 6304c84ac8361d443b2c70a7bba924b0, type: 3}
+  FailCli: {fileID: 8300000, guid: 10975ed53362a3541ad4ec5cf6c0485d, type: 3}
+  PickAu: {fileID: 8300000, guid: bde91441c9a623049a16647944d65403, type: 3}
+  Lauf: {fileID: 8300000, guid: 23c616120b446684f9a78f9694ab18aa, type: 3}

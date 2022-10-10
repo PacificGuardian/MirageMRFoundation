@@ -21,7 +21,7 @@ MonoBehaviour:
     Answer: What
     Type: String
     TotalCount: 5
-  - Question: "40\uFF0B43\uFF0B15 = "
+  - Question: '40+43+15 = '
     Answer: 98
     Type: Number
     TotalCount: 5

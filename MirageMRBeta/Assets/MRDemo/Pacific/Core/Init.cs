@@ -34,6 +34,7 @@ public class Init : MonoBehaviour
     [SerializeField] TextMeshProUGUI QText;
     public GameObject CamParent;
     public int FireAngleMod = -30;
+    public int AngCen = 0;
     public float Delay = 0.2f;
     private GameObject[] BookList;
     private QuestionContainer container;
@@ -126,12 +127,13 @@ public class Init : MonoBehaviour
         CurAltar = Altar[internalNum];
 
         CurAltar.AddComponent<AltarTrig>();
+        float[] tempAg = angle(BookAmount, AngCen, 45);
 
         for(int i = 0; i < BookAmount; i++)
         {
             //Randomise base power and angle
             XMod = Random.Range(-10, 10);
-            Firept.rotation = Quaternion.Euler(FireAngleMod + XMod, angle(), 0);
+            Firept.rotation = Quaternion.Euler(FireAngleMod + XMod, tempAg[i], 0);
 
             GameObject Book = Instantiate(BookPrefab, Firept.position, Firept.rotation);
             Book.transform.SetParent(Parent.transform);
@@ -165,8 +167,18 @@ public class Init : MonoBehaviour
         return Random.Range(1200,1500);
     }
 
-    int angle(){   
-        return Random.Range(-40,-140);
+    float[] angle(int Amount, float Central, float Deviation){   
+        List<float> temp = new();
+        float tempint; 
+        for(int i = 0; i < Amount; i ++){
+                tempint = Central ;
+                tempint += Random.Range(-Deviation, Deviation);
+                if(!temp.Contains(tempint)){
+                    temp.Add(tempint);
+                    Debug.Log(tempint);
+                }
+        }
+        return temp.ToArray();
     }
     public void BookSwap(){
         if(CurAltar != null){

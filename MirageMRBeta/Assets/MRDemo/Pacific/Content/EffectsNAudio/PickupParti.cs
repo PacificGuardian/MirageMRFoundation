@@ -1,0 +1,15 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+[RequireComponent(typeof(AudioSource))]
+public class PickupParti : MonoBehaviour
+{
+    IEnumerator Start(){
+        AudioSource aud = GetComponent<AudioSource>();
+        aud.clip = Init.Singleton.effBase.PickAu;
+        aud.Play();
+        yield return new WaitForSeconds(3);
+        Destroy(this.gameObject);
+        Debug.Log("Destroying Pickup");
+    }
+}

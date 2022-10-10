@@ -26,6 +26,7 @@ public class WireClient : MonoBehaviour
     {
         wired = GameObject.Find("SerialController").GetComponent<SerialController>();
         vive = GetComponent<ViveControl>();
+        wired.SendSerialMessage("d");
     }
 
 

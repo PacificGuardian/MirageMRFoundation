@@ -54,8 +54,8 @@ public class Starting : MonoBehaviour
         else
         audio = Init.Singleton.Rabbit.GetComponent<AudioSource>();
         audio.clip = Init.Singleton.BGM;
-        audio.Play();
         audio.volume = 0.2f;
+        audio.Play();
         Debug.Log("Starting BGM");
         SerCon.SetActive(true);
     }
@@ -75,6 +75,10 @@ public class Starting : MonoBehaviour
                 Animations.Wave();
             }
             else{
+            AudioSource tempAud = Init.Singleton.Rabbit.GetComponent<AudioSource>();
+            tempAud.clip = Init.Singleton.effBase.Lauf;
+            tempAud.volume = 0.3f;
+            tempAud.Play();
             Animations.Wave();
             yield return new WaitForSeconds(2.4f);
             StartCoroutine(FadeOut(initialFade, 0.02f));
