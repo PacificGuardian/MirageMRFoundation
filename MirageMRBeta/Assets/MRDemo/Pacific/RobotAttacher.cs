@@ -46,6 +46,7 @@ public class RobotAttacher : MonoBehaviour
                 Debug.Log("Attached to " + other.GetComponent<AnswersContainer>().Answer);
                 Carried.transform.localEulerAngles = new Vector3 (-90, 0, -90);
                 time = 0;
+                HandsUp = true;
                 //Vector3 tempLocal = other.transform.localPosition;
                 while(Vector3.Distance(other.transform.localPosition ,Pickedup) >= 0.01f){
                     other.transform.localPosition = Vector3.MoveTowards(other.transform.localPosition, Pickedup, 0.02f);
@@ -53,7 +54,6 @@ public class RobotAttacher : MonoBehaviour
                     if(other == null)
                     break;
                 }
-                HandsUp = true;
                 yield return null;
             }
         yield return null;
