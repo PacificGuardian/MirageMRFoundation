@@ -166,7 +166,7 @@ public class Init : MonoBehaviour
     }
 
     int angle(){   
-        return Random.Range(-40,-140);
+        return Random.Range(40,140);
     }
     public void BookSwap(){
         if(CurAltar != null){
